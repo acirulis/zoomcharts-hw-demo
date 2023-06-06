@@ -9,6 +9,7 @@
 <script>
     console.assert(JSON.stringify(shortenValue(10000)) === JSON.stringify({value: 10, valueUnit: "K"}));
     console.assert(JSON.stringify(shortenValue(100000000)) === JSON.stringify({value: 100, valueUnit: "M"}));
+    console.assert(JSON.stringify(shortenValue(100000000, "")) === JSON.stringify({value: 100000000, valueUnit: ""}));
     console.assert(JSON.stringify(shortenValue(123, "K")) === JSON.stringify({value: 0.123, valueUnit: "K"}));
     console.assert(JSON.stringify(shortenValue(1234, "not a real unit")) === JSON.stringify({value: 1234, valueUnit: "not a real unit"}));
     console.assert(JSON.stringify(shortenValue(999999999)) === JSON.stringify({value: 999.999999, valueUnit: "M"}));
