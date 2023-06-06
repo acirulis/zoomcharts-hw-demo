@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ZoomCharts HW</title>
+    <script src="functions.js"></script>
+</head>
+<body>
+<script>
+    console.assert(JSON.stringify(shortenValue(10000)) === JSON.stringify({value: 10, valueUnit: "K"}));
+    console.assert(JSON.stringify(shortenValue(100000000)) === JSON.stringify({value: 100, valueUnit: "M"}));
+    console.assert(JSON.stringify(shortenValue(123, "K")) === JSON.stringify({value: 0.123, valueUnit: "K"}));
+    console.assert(JSON.stringify(shortenValue(1234, "not a real unit")) === JSON.stringify({value: 1234, valueUnit: "not a real unit"}));
+    console.assert(JSON.stringify(shortenValue(999999999)) === JSON.stringify({value: 999.999999, valueUnit: "M"}));
+    console.assert(JSON.stringify(shortenValue(999999999, null)) === JSON.stringify({value: 999.999999, valueUnit: "M"}));
+    console.assert(JSON.stringify(shortenValue("not a number", "K")) === JSON.stringify({value: "not a number", valueUnit: "K"}));
+    console.assert(JSON.stringify(shortenValue("not a number", null)) === JSON.stringify({value: "not a number", valueUnit: ""}));
+    console.assert(JSON.stringify(shortenValue(-1000)) === JSON.stringify({value: -1, valueUnit: "K"}));
+    console.assert(JSON.stringify(shortenValue(-1000, 'K')) === JSON.stringify({value: -1, valueUnit: "K"}));
+    console.assert(JSON.stringify(shortenValue(0)) === JSON.stringify({value: 0, valueUnit: ""}));
+    console.assert(JSON.stringify(shortenValue(0,'T')) === JSON.stringify({value: 0, valueUnit: "T"}));
+    console.assert(JSON.stringify(shortenValue(3.14,'K')) === JSON.stringify({value: 0.00314, valueUnit: "K"}));
+    console.assert(JSON.stringify(shortenValue(9876345.123456789,'T')) === JSON.stringify({value: 0.000009876345123456789, valueUnit: "T"}));
+    // Some edge cases on floating point can still remain untested
+</script>
+</body>
+</html>
