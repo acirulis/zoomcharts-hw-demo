@@ -1,3 +1,5 @@
+# ZoomCharts homework demo solution
+
 There are long and short forms of numbers. For example, 10000 can also be written as 10 K, or
 100000000 can be written as 100 M.
 
@@ -33,4 +35,4 @@ example, shortening(undefined) should return { value: undefined, valueUnit: "" }
 For the testing, the function should have automated tests created which ensure the function
 passes all of the above requirements. It should be verified to be robust to all valid and invalid
 inputs, and any calculations should be robust to reasonable margins of floating point arithmetic
-errors
+errors.
